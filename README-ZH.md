@@ -1,4 +1,4 @@
-[English](https://github.com/wenjunxiao/mac-docker-connector/blob/master/README.md) | [中文简体](https://github.com/wenjunxiao/mac-docker-connector/blob/master/README-ZH.md)
+[English](https://github.com/PillHe/Mac-Docker-Connector/blob/master/README.md) | [中文简体](https://github.com/PillHe/Mac-Docker-Connector/blob/master/README-ZH.md)
 
 # mac-docker-connector
 
@@ -47,9 +47,9 @@
 
 ## 使用
 
-  先安装Mac端的服务`mac-docker-connector`
+  先安装Mac端的服务`Mac-Docker-Connector`
 ```bash
-$ brew tap wenjunxiao/brew
+$ brew tap PillHe/brew
 $ brew install docker-connector
 ```
 
@@ -63,14 +63,14 @@ $ docker network ls --filter driver=bridge --format "{{.ID}}" | xargs docker net
 $ sudo brew services start docker-connector
 ```
 
-  安装Docker端的容器`mac-docker-connector`
+  安装Docker端的容器`Mac-Docker-Connector`
 ```bash
-$ docker pull origin wenjunxiao/mac-docker-connector
+$ docker pull origin PillHe/Mac-Docker-Connector
 ```
 
   启动Docker端的容器，其中网络必须是`host`，并且添加`NET_ADMIN`特性
 ```bash
-$ docker run -it -d --restart always --net host --cap-add NET_ADMIN --name connector mac-docker-connector
+$ docker run -it -d --restart always --net host --cap-add NET_ADMIN --name connector Mac-Docker-Connector
 ```
 
   如果你向导出你自己的容器给其他人，让其他人可以访问你在容器中搭建的服务，其他人必须安装另一个客户端[docker-accessor](./accessor)，同时你必须开启`expose`（这默认是关闭的）和提供访问的令牌(`token`)，
@@ -79,7 +79,7 @@ $ docker run -it -d --restart always --net host --cap-add NET_ADMIN --name conne
 ## 配置说明
 
   基本的配置选项，通常你不需要修改他们，除非你的环境冲突（比如端口被占用，子网已使用）。
-  一旦需要变更，那么Docker容器`mac-docker-connector`也需要使用相同的参数重新启动
+  一旦需要变更，那么Docker容器`Mac-Docker-Connector`也需要使用相同的参数重新启动
 * `addr` 虚拟网络地址, 默认 `192.168.251.1/24`（可以修改，但容器端需要同步修改参数）
   ```
   addr 192.168.251.1/24
@@ -92,7 +92,7 @@ $ docker run -it -d --restart always --net host --cap-add NET_ADMIN --name conne
   ```
   mtu 1400
   ```
-* `host` UDP监听的地址，仅用于Docker容器`mac-docker-connector`连接使用，处于安全和适应移动办公设置成`127.0.0.1`（通常无需修改）
+* `host` UDP监听的地址，仅用于Docker容器`Mac-Docker-Connector`连接使用，处于安全和适应移动办公设置成`127.0.0.1`（通常无需修改）
   ```
   host 127.0.0.1
   ```

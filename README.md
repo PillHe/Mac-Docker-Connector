@@ -1,4 +1,4 @@
-[English](https://github.com/wenjunxiao/mac-docker-connector/blob/master/README.md) | [中文简体](https://github.com/wenjunxiao/mac-docker-connector/blob/master/README-ZH.md)
+[English](https://github.com/PillHe/Mac-Docker-Connector/blob/master/README.md) | [中文简体](https://github.com/PillHe/Mac-Docker-Connector/blob/master/README-ZH.md)
 
 # mac-docker-connector
 
@@ -53,7 +53,7 @@
 
   Install mac client of mac-docker-connector.
 ```bash
-$ brew tap wenjunxiao/brew
+$ brew tap PillHe/brew
 $ brew install docker-connector
 ```
 
@@ -67,15 +67,15 @@ $ docker network ls --filter driver=bridge --format "{{.ID}}" | xargs docker net
 $ sudo brew services start docker-connector
 ```
 
-  Install docker front of `mac-docker-connector`
+  Install docker front of `Mac-Docker-Connector`
 ```bash
-$ docker pull origin wenjunxiao/mac-docker-connector
+$ docker pull origin PillHe/Mac-Docker-Connector
 ```
 
   Start the docker front. The network must be `host`, and add `NET_ADMIN` capability.
 
 ```bash
-$ docker run -it -d --restart always --net host --cap-add NET_ADMIN --name mac-connector wenjunxiao/mac-docker-connector
+$ docker run -it -d --restart always --net host --cap-add NET_ADMIN --name mac-connector PillHe/Mac-Docker-Connector
 ```
 
   If you want to expose the containers of docker to other pepole, Please reference [docker-accessor](./accessor)
@@ -83,7 +83,7 @@ $ docker run -it -d --restart always --net host --cap-add NET_ADMIN --name mac-c
 ## Configuration
 
   Basic configuration items, do not need to modify these, unless your environment conflicts,
-  if necessary, then the docker container `mac-docker-connector` also needs to be started with the same parameters
+  if necessary, then the docker container `Mac-Docker-Connector` also needs to be started with the same parameters
 * `addr` virtual network address, default `192.168.251.1/24` (change if it conflict)
   ```
   addr 192.168.251.1/24
@@ -96,7 +96,7 @@ $ docker run -it -d --restart always --net host --cap-add NET_ADMIN --name mac-c
   ```
   mtu 1400
   ```
-* `host` udp listen host, used to be connected by mac-docker-connector, default `127.0.0.1` for security and adaptation
+* `host` udp listen host, used to be connected by Mac-Docker-Connector, default `127.0.0.1` for security and adaptation
   ```
   host 127.0.0.1
   ```

@@ -21,7 +21,7 @@ import (
 )
 
 // TmpPeer peer tmp file
-const TmpPeer = "/tmp/Mac-Docker-Connector.peer"
+const TmpPeer = "/tmp/mac-docker-connector.peer"
 
 var (
 	logger *logging.Logger
